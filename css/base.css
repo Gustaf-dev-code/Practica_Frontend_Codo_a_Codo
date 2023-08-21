@@ -1,0 +1,25 @@
+/* Reset de estilos */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Box-sizing */
+html {
+  box-sizing: border-box;
+}
+
+/* Tipografía base */
+body {
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+/* Colores y paleta */
+:root {
+  --primary-color: #353a40;
+  --secondary-color: #ffffff;
+  --tertiary-color: #1aa73b;
+  --titles: #212429;
+  --nav-li: #8f9ba0;
+  --background-color: #f8f9fa;
+}
