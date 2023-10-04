@@ -22,29 +22,33 @@
           <ul>
             <li><a href="#conferencia">La conferencia</a></li>
             <li><a href="#oradores">Los oradores</a></li>
-            <li><a href="#lugarFecha">El lugar y la fecha</a></li>
-            <li><a href="#formularioOrador">Conviertete en orador</a></li>
+            <li><a href="#honolulu">El lugar y la fecha</a></li>
+            <li><a href="#formulario">Conviertete en orador</a></li>
             <li><a href="./pages/tickets.html">Comprar tickets</a></li>
           </ul>
         </nav>
       </div>
       <div id="header__background">
         <section id="conferencia">
-          <h1>Conf Bs As</h1>
-          <p>
-            Bs As llega por primera vez a Argentina. Un evento para compartir
-            con
-          </p>
-          <p>
-            nuestra comunidad de conocimiento y experiencia de los expertos que
-          </p>
-          <p>
-            estan creando el futuro del Internet. Ven a conocer a miembros del
-          </p>
-          <p>
-            evento, a otros estudiantes de Codo a Codo y los oradores de primer
-          </p>
-          <p>nivel que tenemos para ti, Te esperamos!</p>
+          <div class="conferencias__info">
+            <h1>Conf Bs As</h1>
+            <p>
+              Bs As llega por primera vez a Argentina. Un evento para compartir
+              con
+            </p>
+            <p>
+              nuestra comunidad de conocimiento y experiencia de los expertos
+              que
+            </p>
+            <p>
+              estan creando el futuro del Internet. Ven a conocer a miembros del
+            </p>
+            <p>
+              evento, a otros estudiantes de Codo a Codo y los oradores de
+              primer
+            </p>
+            <p>nivel que tenemos para ti, Te esperamos!</p>
+          </div>
           <div class="section__button">
             <a href="">Quiero ser Orador</a>
             <a href="">Comprar tickets</a>
@@ -71,13 +75,14 @@
               <h4>JavaScript</h4>
               <h4>React</h4>
             </div>
-
-            <h3>Steve Jobs</h3>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Cupiditate molestiae culpa modi optio alias quidem tempora
-              dignissimos voluptatum, ad eveniet aut sunt corporis dolorum!
-            </p>
+            <div class="text">
+              <h3>Steve Jobs</h3>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Cupiditate molestiae culpa modi optio alias quidem tempora
+                dignissimos voluptatum, ad eveniet aut sunt corporis dolorum!
+              </p>
+            </div>
           </div>
           <div class="orador">
             <img src="./assets/img/bill.jpg" alt="Bill Gates" loading="lazy" />
@@ -85,12 +90,14 @@
               <h4>JavaScript</h4>
               <h4>React</h4>
             </div>
-            <h3>Bill Gates</h3>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Cupiditate molestiae culpa modi optio alias quidem tempora
-              dignissimos voluptatum, ad eveniet aut sunt corporis dolorum!
-            </p>
+            <div class="text">
+              <h3>Bill Gates</h3>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Cupiditate molestiae culpa modi optio alias quidem tempora
+                dignissimos voluptatum, ad eveniet aut sunt corporis dolorum!
+              </p>
+            </div>
           </div>
           <div class="orador">
             <img
@@ -102,16 +109,90 @@
               <h4>Negocios</h4>
               <h4>Startups</h4>
             </div>
-            <h3>Ada Lovelace</h3>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Cupiditate molestiae culpa modi optio alias quidem tempora
-              dignissimos voluptatum, ad eveniet aut sunt corporis dolorum!
-            </p>
+            <div class="text">
+              <h3>Ada Lovelace</h3>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Cupiditate molestiae culpa modi optio alias quidem tempora
+                dignissimos voluptatum, ad eveniet aut sunt corporis dolorum!
+              </p>
+            </div>
           </div>
         </div>
       </section>
+      <section id="honolulu">
+        <div class="honolulu__img"></div>
+        <div class="honolulu__txt">
+          <h3>Bs As - Octubre</h3>
+          <p>
+            Buenos aires es la provincia y localidad más grande del estado de
+            Argentina. En los Estados Unidos, Honolulu es la mas sureña de entre
+            las principales ciudades estadounidenses. Aunque el nombre de
+            Honolulu se refiere a área urbana en la costa sureste de la isla de
+            Oahu, la ciudad y el condado de Honolulu han formado una
+            ciudad-condado consolidada desde 1907, que cubre toda la ciudad
+            (aproximadamente 600 km² de superficie).
+          </p>
+          <a href="#">Conocé más</a>
+        </div>
+      </section>
+      <section id="formulario">
+        <div class="formulario__titulo">
+          <h3>
+            <div>CONVIÉRTETE EN UN</div>
+            ORADOR
+          </h3>
+          <p>
+            Anótate como orador para dar una <span>charla ignite</span>.
+            Cuéntanos de qué quieres hablar!
+          </p>
+        </div>
+        <div class="formulario__container">
+          <div class="formulario__container__input">
+            <input
+              name="nombre"
+              minlength="3"
+              maxlength="30"
+              type="text"
+              autofocus
+              required
+              placeholder="Nombre"
+            />
+            <input
+              name="apellido"
+              minlength="3"
+              maxlength="30"
+              type="text"
+              autofocus
+              required
+              placeholder="Apellido"
+            />
+          </div>
+          <textarea
+            name="comentario"
+            id=""
+            cols="30"
+            rows="10"
+            placeholder="Sobre qué quieres hablar?"
+            required
+          ></textarea>
+          <p>Recuerda incluir un título para tu charla</p>
+          <a href="#">Enviar</a>
+        </div>
+      </section>
     </main>
-    <footer></footer>
+    <footer>
+      <nav class="footer__nav">
+        <ul>
+          <li><a href="#">Preguntas frecuentes</a></li>
+          <li><a href="#">Contáctanos</a></li>
+          <li><a href="#">Prensa</a></li>
+          <li><a href="#">Conferencias</a></li>
+          <li><a href="#">Términos y condiciones</a></li>
+          <li><a href="#">Privacidad</a></li>
+          <li><a href="#">Estudiantes</a></li>
+        </ul>
+      </nav>
+    </footer>
   </body>
 </html>

@@ -84,23 +84,25 @@ header {
     background-repeat: no-repeat;
 
     #conferencia {
-      padding: 150px 100px 100px 500px;
       display: flex;
       flex-direction: column;
       text-align: right;
+      padding-top: calc(100% - 85%);
+      padding-right: 80px;
+      & .conferencia__info {
+        > h1 {
+          font-size: 36px;
+          font-weight: 500;
+          margin: 0;
+          padding: 0;
+        }
 
-      > h1 {
-        font-size: 36px;
-        font-weight: 500;
-        margin: 0;
-        padding: 0;
-      }
-
-      > p {
-        font-size: 16px;
-        font-weight: 400;
-        margin: 0;
-        padding: 0;
+        > p {
+          font-size: 16px;
+          font-weight: 400;
+          margin: 0;
+          padding: 0;
+        }
       }
 
       .section__button {
