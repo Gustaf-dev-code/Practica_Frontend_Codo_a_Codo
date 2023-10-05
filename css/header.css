@@ -8,6 +8,7 @@ header {
 
   & .header__container {
     width: 100%;
+    position: fixed;
     margin: 0 auto;
     background-color: var(--primary-color);
     display: flex;
@@ -80,7 +81,7 @@ header {
 
   & #header__background {
     width: 100%;
-    height: 85%;
+    height: 100%;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)),
       url(../assets/img/header-background-1.jpg);
     background-size: cover;
@@ -289,7 +290,7 @@ header {
 
     & #header__background {
       width: 100%;
-      height: 88%;
+      height: 100%;
       background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)),
         url(../assets/img/header-background-1.jpg);
       background-size: cover;
@@ -297,7 +298,7 @@ header {
       background-repeat: no-repeat;
 
       & #conferencia {
-        padding-top: calc(100% - 65%);
+        padding-top: calc(100% - 25%);
         padding-right: 8%;
         padding-left: 8%;
         & .conferencias__info {
