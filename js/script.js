@@ -15,3 +15,9 @@ function closeMenu() {
 menuItems.forEach((item) => {
   item.addEventListener("click", closeMenu);
 });
+
+window.addEventListener("scroll", () => {
+  if (nav.classList.contains("nav--open")) {
+    closeMenu();
+  }
+});
