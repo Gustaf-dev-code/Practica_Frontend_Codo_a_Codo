@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/comprar-tickets.css" />
+    <title>Comprar tickets - Conf Bs As</title>
+  </head>
+  <body>
+    <header>
+      <div class="header__container">
+        <div class="header__leftnav">
+          <a href="../index.html">
+            <img
+              src="../assets/img/codoacodo_logo.png"
+              alt="logo de codo a codo 4.0"
+            />
+          </a>
+          <h2>Conf Bs As</h2>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li><a href="../index.html#conferencia">La conferencia</a></li>
+            <li><a href="../index.html#oradores">Los oradores</a></li>
+            <li><a href="../index.html#honolulu">El lugar y la fecha</a></li>
+            <li>
+              <a href="../index.html#formulario">Conviertete en orador</a>
+            </li>
+            <li><a href="./comprar-tickets.html">Comprar tickets</a></li>
+          </ul>
+        </nav>
+        <div class="hamburguer">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section id="pricing">
+        <div class="pricing-cards">
+          <h1>Tickets</h1>
+          <div class="cards">
+            <div class="cards-inner">
+              <div class="card">
+                <h2>Estudiante</h2>
+                <p>Descuento:</p>
+                <h3>80%</h3>
+                <ul role="list" class="card-bullets">
+                  <li>Presentar documentación</li>
+                  <li>Incluye Refrigerio</li>
+                </ul>
+              </div>
+
+              <div class="card">
+                <h2>Trainee</h2>
+                <p>Descuento:</p>
+                <h3>50%</h3>
+                <ul role="list" class="card-bullets">
+                  <li>Presentar documentación</li>
+                  <li>Incluye Refrigerio</li>
+                  <li>Incluye libreta del evento</li>
+                </ul>
+              </div>
+
+              <div class="card">
+                <h2>Junior</h2>
+                <p>Descuento:</p>
+                <h3>15%</h3>
+                <ul role="list" class="card-bullets">
+                  <li>Presentar documentación</li>
+                  <li>Incluye Refrigerio</li>
+                  <li>Incluye polera del evento</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="form">
+        <div class="left">
+          <div class="info">
+            <h1>Conferencia de Programación - Codo a Codo</h1>
+            <p>
+              Un evento que contará con la participación de grandes exponentes
+              del desarrollo de software y que brindarán tips, información
+              relevante, actualizaciones y mucho más. No te lo puedes perder!
+            </p>
+          </div>
+        </div>
+        <div class="right">
+          <form action="" id="ticket-form">
+            <div class="info">
+              <h2>Valor Ticket: <span>$200</span></h2>
+              <p>Solicitar ticket</p>
+            </div>
+            <div class="inputs">
+              <div class="input-container">
+                <input type="text" id="name" name="name" autocomplete="off" />
+                <label for="name"><span class="txt">Nombre(s):</span></label>
+              </div>
+              <div class="input-container">
+                <input
+                  type="text"
+                  id="lastname"
+                  name="lastname"
+                  autocomplete="off"
+                />
+                <label for="lastname"
+                  ><span class="txt">Apellidos:</span></label
+                >
+              </div>
+            </div>
+            <div class="input-container">
+              <input type="text" id="email" name="email" autocomplete="off" />
+              <label for="email"><span class="txt">Correo:</span></label>
+            </div>
+            <div class="inputs">
+              <div class="input-container">
+                <input type="number" id="quantity" name="quantity" min="1" />
+                <label for="quantity"><span class="txt">Cantidad:</span></label>
+              </div>
+              <div class="select-container">
+                <label for="category">Categoría:</label>
+                <select id="category" required>
+                  <option value="">--------</option>
+                  <option value="student">Estudiante</option>
+                  <option value="trainee">Trainee</option>
+                  <option value="junior">Junior</option>
+                </select>
+              </div>
+            </div>
+            <div class="buttons">
+              <a href="#" class="delete-btn"
+                ><span></span>
+                <p>Borrar</p></a
+              >
+              <a href="#" class="summary-btn">Resumen</a>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <nav class="footer__nav">
+        <ul>
+          <li><a href="#">Preguntas frecuentes</a></li>
+          <li><a href="#">Contáctanos</a></li>
+          <li><a href="#">Prensa</a></li>
+          <li><a href="#">Conferencias</a></li>
+          <li><a href="#">Términos y condiciones</a></li>
+          <li><a href="#">Privacidad</a></li>
+          <li><a href="#">Estudiantes</a></li>
+        </ul>
+      </nav>
+    </footer>
+    <script src="../js/script.js"></script>
+    <script src="../js/tickets.js"></script>
+  </body>
+</html>
