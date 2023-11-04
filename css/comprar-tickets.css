@@ -105,6 +105,7 @@ header {
 #form {
   display: flex;
   flex-direction: column;
+  height: auto;
 
   & .left,
   .right {
@@ -114,9 +115,9 @@ header {
   }
 
   & .left {
-    height: 400px;
     background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 70, 0.9)),
       url("../assets/img/hawaii3.jpg") no-repeat center/cover;
+    width: 100%;
     & .info {
       display: flex;
       flex-direction: column;
@@ -134,6 +135,7 @@ header {
   }
 
   & .right {
+    height: auto;
     & #ticket-form {
       width: 100%;
       padding: 0 10%;
@@ -159,6 +161,22 @@ header {
         }
       }
 
+      & .error-message {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #ca0000;
+        padding: 8px 0;
+        border-radius: 9px;
+
+        > .error-alert {
+          color: var(--secondary-color);
+          font-size: 12px;
+          margin: 0 8px;
+          text-align: center;
+        }
+      }
+
       & .inputs {
         display: flex;
         justify-content: space-around;
@@ -177,6 +195,15 @@ header {
         padding: 15px;
         margin-bottom: 15px;
         position: relative;
+
+        & .icon-state {
+          position: absolute;
+          right: 0;
+          bottom: 8px;
+          width: 16px;
+          height: 16px;
+          opacity: 0;
+        }
 
         & .focused {
           transform: translateY(-150%);
@@ -225,6 +252,20 @@ header {
             transition: all 0.3s ease;
             color: var(--nav-li);
           }
+        }
+      }
+
+      & .valid-input {
+        & .icon-state {
+          color: #02aa2c;
+          opacity: 1;
+        }
+      }
+
+      & .error-input {
+        & .icon-state {
+          color: #ca0000;
+          opacity: 1;
         }
       }
 
@@ -407,6 +448,9 @@ header {
           cursor: pointer;
           transition: all 0.2s ease;
           text-decoration: none;
+          font-family: "Poppins", Arial, sans-serif;
+          font-size: 16px;
+          border: none;
 
           &:hover {
             background-color: var(--secondary-color);
@@ -514,10 +558,118 @@ header {
   }
 }
 
+/* === TOAST-CONTAINER === */
+
+.toast-container {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 20px;
+
+  & .toast {
+    background: #333;
+    color: var(--secondary-color);
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    border-radius: 8px;
+    animation: opening 0.3s ease-out forwards;
+    position: relative;
+    overflow: hidden;
+
+    &.success {
+      background: var(--tertiary-color);
+    }
+
+    &.error {
+      background: #ca0000;
+    }
+
+    &.closing {
+      animation: closing 0.3s ease-out forwards;
+    }
+
+    &.autoclose::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 6px;
+      background: rgba(0, 0, 0, 0.5);
+      animation: progress 5s linear forwards;
+    }
+
+    & .toast-content {
+      display: grid;
+      grid-template-columns: 30px auto;
+      align-items: center;
+      gap: 15px;
+      padding: 15px;
+
+      & .noti-title {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+    }
+
+    & .close-btn {
+      background: rgba(0, 0, 0, 0.1);
+      border: none;
+      cursor: pointer;
+      padding: 0 5px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.3);
+      }
+
+      & .toast-icon {
+        width: 20px;
+        height: 20px;
+        color: var(--secondary-color);
+      }
+    }
+  }
+}
+
+@keyframes opening {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes closing {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(110%);
+  }
+}
+
+@keyframes progress {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
 @media (width>=900px) {
   #form {
     flex-direction: row;
-    height: 100vh;
+    height: auto;
 
     & .left,
     .right {
@@ -529,6 +681,16 @@ header {
     & .left {
       & .info {
         margin-block-start: 200px;
+      }
+    }
+
+    & .right {
+      & #ticket-form {
+        & .error-message {
+          & .error-alert {
+            margin: 0 8px;
+          }
+        }
       }
     }
   }
