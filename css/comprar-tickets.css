@@ -569,9 +569,9 @@ header {
   display: flex;
   flex-direction: column-reverse;
   gap: 20px;
+  z-index: 10;
 
   & .toast {
-    background: #333;
     color: var(--secondary-color);
     display: flex;
     justify-content: space-between;
