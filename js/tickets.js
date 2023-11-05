@@ -59,7 +59,7 @@ const formInputs = document.querySelectorAll("#ticket-form input"); //Se obtiene
 const category = document.getElementById("category");
 
 const expresions = {
-  nameRegex: /^(?=[a-zA-Z ]{3,40}$)[a-zA-Z]+(?: [a-zA-Z]+)*$/, //Expresión regular para validar el nombre
+  nameRegex: /^(?=[\p{L} ]{3,40}$)[\p{L}]+(?: [\p{L}]+)*$/u, //Expresión regular para validar el nombre
   emailRegex: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/, //Expresión regular para validar el correo que consta de 3 partes: nombre de usuario, símbolo @ y dominio
 };
 
@@ -120,6 +120,72 @@ formInputs.forEach((input) => {
 const toastContainer = document.getElementById("toast-container");
 
 const summaryButton = document.querySelector(".summary-btn");
+
+const modal = document.querySelector(".modal");
+const modalClose = document.querySelector(".modal-close");
+
+modalClose.addEventListener("click", (event) => {
+  event.preventDefault();
+  modal.classList.remove("active");
+});
+
+const getValueInputs = (event) => {
+  const name = document.getElementById("name").value;
+  const lastname = document.getElementById("lastname").value;
+  const email = document.getElementById("email").value;
+  const quantity = document.getElementById("quantity").value;
+  const categorySelect = document.getElementById("category");
+  const selectedCategory =
+    categorySelect.options[categorySelect.selectedIndex].text;
+
+  const ticketValue = 200;
+  let discount;
+  let totalDiscount;
+  let total;
+  if (selectedCategory === "Estudiante") {
+    discount = 0.8;
+    totalDiscount = ticketValue * quantity * discount;
+    total = ticketValue * quantity - totalDiscount;
+  } else if (selectedCategory === "Trainee") {
+    discount = 0.5;
+    totalDiscount = ticketValue * quantity * discount;
+    total = ticketValue * quantity - totalDiscount;
+  } else if (selectedCategory === "Junior") {
+    discount = 0.15;
+    totalDiscount = ticketValue * quantity * discount;
+    total = ticketValue * quantity - totalDiscount;
+  }
+
+  const modalName = document.getElementById("modal-name");
+  const modalLastname = document.getElementById("modal-lastname");
+  const modalEmail = document.getElementById("modal-email");
+  const modalQuantity = document.getElementById("modal-quantity");
+  const modalCategory = document.getElementById("modal-category");
+  const modalTotalDiscount = document.getElementById("modal-total-discount");
+  const modalTotal = document.getElementById("modal-total");
+
+  modalName.textContent = name;
+  modalLastname.textContent = lastname;
+  modalEmail.textContent = email;
+  modalQuantity.textContent = quantity;
+  modalCategory.textContent = selectedCategory;
+  modalTotalDiscount.textContent = "$" + totalDiscount;
+  modalTotal.textContent = "$" + total;
+};
+
+summaryButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  if (
+    fields.name &&
+    fields.lastname &&
+    fields.email &&
+    fields.quantity &&
+    fields.category
+  ) {
+    modal.classList.add("active");
+    getValueInputs(event);
+  }
+});
 
 summaryButton.addEventListener("click", (event) => {
   event.preventDefault();
